@@ -1,0 +1,99 @@
+{
+  "sample_size_per_class": 50000,
+  "negative_sampling": "uniform unique item within search_category; category 114 fallback",
+  "best_features_by_label_correlation": [
+    {
+      "feature": "all_text_query_coverage",
+      "positive_mean": 0.8154199682539682,
+      "negative_mean": 0.07497726984126984,
+      "difference": 0.7404426984126984,
+      "label_correlation": 0.8288932366481766
+    },
+    {
+      "feature": "location_match",
+      "positive_mean": 0.8324,
+      "negative_mean": 0.0136,
+      "difference": 0.8188000000000001,
+      "label_correlation": 0.8286855157575619
+    },
+    {
+      "feature": "description_query_coverage",
+      "positive_mean": 0.6235545317460317,
+      "negative_mean": 0.049145,
+      "difference": 0.5744095317460317,
+      "label_correlation": 0.6919967447065148
+    },
+    {
+      "feature": "title_query_coverage",
+      "positive_mean": 0.5446493571428572,
+      "negative_mean": 0.013979658730158731,
+      "difference": 0.5306696984126985,
+      "label_correlation": 0.6626670147168593
+    },
+    {
+      "feature": "params_query_coverage",
+      "positive_mean": 0.39273216666666666,
+      "negative_mean": 0.04509075396825397,
+      "difference": 0.3476414126984127,
+      "label_correlation": 0.5051074521871923
+    },
+    {
+      "feature": "exact_query_in_title",
+      "positive_mean": 0.35428,
+      "negative_mean": 0.00226,
+      "difference": 0.35202,
+      "label_correlation": 0.4598684756655205
+    },
+    {
+      "feature": "exact_query_in_description",
+      "positive_mean": 0.33784,
+      "negative_mean": 0.00362,
+      "difference": 0.33421999999999996,
+      "label_correlation": 0.44411919281800566
+    },
+    {
+      "feature": "params_filter_coverage",
+      "positive_mean": 0.6491684837123765,
+      "negative_mean": 0.360623982383888,
+      "difference": 0.28854450132848847,
+      "label_correlation": 0.3476120863220813
+    },
+    {
+      "feature": "log_train_click_frequency",
+      "positive_mean": 1.0743821875772301,
+      "negative_mean": 0.8343110010113699,
+      "difference": 0.24007118656586024,
+      "label_correlation": 0.2588801394540045
+    },
+    {
+      "feature": "log_reviews",
+      "positive_mean": 3.1432950310590617,
+      "negative_mean": 2.943175312918115,
+      "difference": 0.20011971814094665,
+      "label_correlation": 0.06256688042242078
+    }
+  ],
+  "benchmark_history": {
+    "seen_query_text_count": 916,
+    "queries_with_at_least_one_historical_item_in_benchmark_corpus": 363,
+    "historical_candidate_count_quantiles": {
+      "0.0": 0.0,
+      "0.5": 0.0,
+      "0.9": 1.0,
+      "0.99": 6.0,
+      "1.0": 33.0
+    }
+  },
+  "category_zero": {
+    "benchmark_query_count": 222,
+    "train_query_row_count": 34,
+    "positive_item_category_counts": {
+      "114": 34
+    }
+  },
+  "validation_protocol": {
+    "cold": "hold out all rows sharing normalized search_query",
+    "warm": "hold out one full query signature while retaining other signatures of the same normalized text",
+    "primary_reporting": "report cold and warm Recall@50 separately and a 63/37 benchmark-mixture estimate"
+  }
+}

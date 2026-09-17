@@ -1,0 +1,79 @@
+# macOS / Windows
+.DS_Store
+Thumbs.db
+
+# Editors and IDEs
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Python bytecode and caches
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.hypothesis/
+.coverage
+.coverage.*
+htmlcov/
+
+# Python environments and local configuration
+.venv/
+venv/
+env/
+.env
+.env.*
+!.env.example
+
+# Packaging
+build/
+dist/
+*.egg-info/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Logs, temporary files and tool caches
+*.log
+*.tmp
+*.temp
+.cache/
+wandb/
+mlruns/
+lightning_logs/
+
+# Heavy shared artifacts in assets; source code and small configs remain trackable
+assets/dataset/
+assets/models/
+assets/checkpoints/
+assets/cache/
+assets/intermediate/
+assets/outputs/
+assets/**/*.parquet
+assets/**/*.feather
+assets/**/*.arrow
+assets/**/*.csv
+assets/**/*.tsv
+assets/**/*.pkl
+assets/**/*.pickle
+assets/**/*.joblib
+assets/**/*.npy
+assets/**/*.npz
+assets/**/*.pt
+assets/**/*.pth
+assets/**/*.ckpt
+assets/**/*.safetensors
+assets/**/*.onnx
+assets/**/*.h5
+assets/**/*.hdf5
+assets/**/*.faiss
+assets/**/*.index
+assets/**/*.zip
+assets/**/*.tar
+assets/**/*.tar.gz
+assets/**/*.tgz
+assets/**/*.7z

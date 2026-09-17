@@ -1,0 +1,88 @@
+{
+  "word_index": {
+    "shape": [
+      344825,
+      200000
+    ],
+    "nnz": 102187573
+  },
+  "char_index": {
+    "shape": [
+      344825,
+      150000
+    ],
+    "nnz": 25000738
+  },
+  "top_configs": [
+    {
+      "char_weight": 0.25,
+      "location_boost": 0.7,
+      "cold": 0.5337599999999999,
+      "warm": 0.5615023076923077,
+      "benchmark_mix_63_cold_37_warm": 0.5440246538461537
+    },
+    {
+      "char_weight": 0.25,
+      "location_boost": 0.5,
+      "cold": 0.5323599999999999,
+      "warm": 0.5601023076923076,
+      "benchmark_mix_63_cold_37_warm": 0.5426246538461538
+    },
+    {
+      "char_weight": 0.5,
+      "location_boost": 0.7,
+      "cold": 0.5264599999999999,
+      "warm": 0.5547382051282052,
+      "benchmark_mix_63_cold_37_warm": 0.5369229358974359
+    },
+    {
+      "char_weight": 0.5,
+      "location_boost": 0.5,
+      "cold": 0.5198333333333334,
+      "warm": 0.5465782051282051,
+      "benchmark_mix_63_cold_37_warm": 0.529728935897436
+    },
+    {
+      "char_weight": 0.25,
+      "location_boost": 0.3,
+      "cold": 0.5187333333333334,
+      "warm": 0.5426089743589744,
+      "benchmark_mix_63_cold_37_warm": 0.5275673205128205
+    },
+    {
+      "char_weight": 0.75,
+      "location_boost": 0.7,
+      "cold": 0.5161133333333333,
+      "warm": 0.5437248717948718,
+      "benchmark_mix_63_cold_37_warm": 0.5263296025641025
+    },
+    {
+      "char_weight": 1.0,
+      "location_boost": 0.7,
+      "cold": 0.49663333333333337,
+      "warm": 0.5254448717948716,
+      "benchmark_mix_63_cold_37_warm": 0.5072936025641025
+    },
+    {
+      "char_weight": 0.75,
+      "location_boost": 0.5,
+      "cold": 0.4888333333333334,
+      "warm": 0.5205115384615385,
+      "benchmark_mix_63_cold_37_warm": 0.5005542692307693
+    },
+    {
+      "char_weight": 0.5,
+      "location_boost": 0.3,
+      "cold": 0.4692733333333334,
+      "warm": 0.49805153846153843,
+      "benchmark_mix_63_cold_37_warm": 0.4799212692307693
+    },
+    {
+      "char_weight": 0.0,
+      "location_boost": 0.5,
+      "cold": 0.4557466666666667,
+      "warm": 0.4807582051282052,
+      "benchmark_mix_63_cold_37_warm": 0.46500093589743596
+    }
+  ]
+}

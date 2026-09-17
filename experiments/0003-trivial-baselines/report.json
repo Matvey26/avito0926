@@ -1,0 +1,14 @@
+{
+  "splits": {
+    "cold": {
+      "queries": 2500,
+      "unique_normalized_texts": 2500,
+      "median_relevant_items": 1.0
+    },
+    "warm": {
+      "queries": 2500,
+      "unique_normalized_texts": 2500,
+      "median_relevant_items": 1.0
+    }
+  }
+}

@@ -1,0 +1,9 @@
+mode,method,queries,recall_at_50,queries_with_hit,benchmark_mix_63_cold_37_warm
+cold,global_popularity,2500,0.0004,1,0.000696
+cold,category_popularity,2500,0.0004,1,0.000696
+cold,location_popularity,2500,0.030466666666666663,77,0.03131766666666667
+cold,query_history,2500,0.030466666666666663,77,0.03131766666666667
+warm,global_popularity,2500,0.0012,3,0.000696
+warm,category_popularity,2500,0.0012,3,0.000696
+warm,location_popularity,2500,0.032766666666666666,84,0.03131766666666667
+warm,query_history,2500,0.032766666666666666,84,0.03131766666666667

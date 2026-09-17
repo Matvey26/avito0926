@@ -1,0 +1,103 @@
+{
+  "diagnostics": [
+    {
+      "variant": "title",
+      "vocabulary_size": 97334,
+      "item_matrix_shape": [
+        344825,
+        97334
+      ],
+      "item_matrix_nnz": 2276719
+    },
+    {
+      "variant": "title_params",
+      "vocabulary_size": 200000,
+      "item_matrix_shape": [
+        344825,
+        200000
+      ],
+      "item_matrix_nnz": 54274524
+    },
+    {
+      "variant": "all_text",
+      "vocabulary_size": 200000,
+      "item_matrix_shape": [
+        344825,
+        200000
+      ],
+      "item_matrix_nnz": 102187573
+    }
+  ],
+  "top_configs": [
+    {
+      "variant": "all_text",
+      "location_boost": 0.5,
+      "cold": 0.4561466666666667,
+      "warm": 0.4807582051282052,
+      "benchmark_mix_63_cold_37_warm": 0.465252935897436
+    },
+    {
+      "variant": "all_text",
+      "location_boost": 0.3,
+      "cold": 0.4561466666666667,
+      "warm": 0.4803582051282052,
+      "benchmark_mix_63_cold_37_warm": 0.46510493589743596
+    },
+    {
+      "variant": "all_text",
+      "location_boost": 0.2,
+      "cold": 0.45374666666666674,
+      "warm": 0.4789582051282052,
+      "benchmark_mix_63_cold_37_warm": 0.463074935897436
+    },
+    {
+      "variant": "all_text",
+      "location_boost": 0.1,
+      "cold": 0.42557333333333336,
+      "warm": 0.44248487179487184,
+      "benchmark_mix_63_cold_37_warm": 0.43183060256410255
+    },
+    {
+      "variant": "title_params",
+      "location_boost": 0.5,
+      "cold": 0.37568,
+      "warm": 0.4027364102564102,
+      "benchmark_mix_63_cold_37_warm": 0.3856908717948718
+    },
+    {
+      "variant": "title_params",
+      "location_boost": 0.3,
+      "cold": 0.375,
+      "warm": 0.40125641025641023,
+      "benchmark_mix_63_cold_37_warm": 0.3847148717948718
+    },
+    {
+      "variant": "title_params",
+      "location_boost": 0.2,
+      "cold": 0.36923999999999996,
+      "warm": 0.39559641025641024,
+      "benchmark_mix_63_cold_37_warm": 0.37899187179487176
+    },
+    {
+      "variant": "all_text",
+      "location_boost": 0.05,
+      "cold": 0.3451066666666667,
+      "warm": 0.35312076923076924,
+      "benchmark_mix_63_cold_37_warm": 0.34807188461538463
+    },
+    {
+      "variant": "title_params",
+      "location_boost": 0.1,
+      "cold": 0.3342133333333333,
+      "warm": 0.35654410256410257,
+      "benchmark_mix_63_cold_37_warm": 0.3424757179487179
+    },
+    {
+      "variant": "title",
+      "location_boost": 0.5,
+      "cold": 0.30892,
+      "warm": 0.33814820512820515,
+      "benchmark_mix_63_cold_37_warm": 0.3197344358974359
+    }
+  ]
+}
