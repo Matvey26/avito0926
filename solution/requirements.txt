@@ -3,3 +3,4 @@ pandas==3.0.5
 pyarrow==25.0.1
 scikit-learn==1.9.1
 scipy==1.18.1
+snowballstemmer==3.0.1

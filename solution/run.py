@@ -4,10 +4,12 @@
 from __future__ import annotations
 
 import argparse
+import re
 from pathlib import Path
 
 import numpy as np
 import pandas as pd
+import snowballstemmer
 from sklearn.feature_extraction.text import TfidfVectorizer
 
 
@@ -17,6 +19,7 @@ CHAR_WEIGHT = 0.25
 LOCATION_BOOST = 0.7
 WORD_MAX_FEATURES = 200_000
 CHAR_MAX_FEATURES = 150_000
+TOKEN_RE = re.compile(r"(?u)\b\w{2,}\b")
 
 
 def parse_args() -> argparse.Namespace:
@@ -33,18 +36,37 @@ def normalize(text: object) -> str:
     return " ".join(str(text).lower().replace("ё", "е").split())
 
 
-def build_word_item_text(items: pd.DataFrame) -> pd.Series:
+class CachedRussianStemmer:
+    """Apply Russian Snowball once per unique token and reuse the result."""
+
+    def __init__(self) -> None:
+        self.stemmer = snowballstemmer.stemmer("russian")
+        self.cache: dict[str, str] = {}
+
+    def __call__(self, text: object) -> str:
+        tokens = TOKEN_RE.findall(normalize(text))
+        unseen = list(dict.fromkeys(token for token in tokens if token not in self.cache))
+        if unseen:
+            self.cache.update(zip(unseen, self.stemmer.stemWords(unseen)))
+        return " ".join(self.cache[token] for token in tokens)
+
+
+def build_word_item_text(
+    items: pd.DataFrame, stem: CachedRussianStemmer
+) -> pd.Series:
     """Give the precise title more weight while retaining all available text."""
-    title = items["item_title_raw"].fillna("").map(normalize)
-    params = items["item_infm_params_text"].fillna("").map(normalize)
-    description = items["item_description_raw"].fillna("").map(normalize)
+    title = items["item_title_raw"].fillna("").map(stem)
+    params = items["item_infm_params_text"].fillna("").map(stem)
+    description = items["item_description_raw"].fillna("").map(stem)
     return title + " " + title + " " + title + " " + params + " " + description
 
 
-def build_word_query_text(queries: pd.DataFrame) -> pd.Series:
+def build_word_query_text(
+    queries: pd.DataFrame, stem: CachedRussianStemmer
+) -> pd.Series:
     """Query filters are useful but the typed query remains the primary signal."""
-    query = queries["search_query"].fillna("").map(normalize)
-    filters = queries["search_infm_params_text"].fillna("").map(normalize)
+    query = queries["search_query"].fillna("").map(stem)
+    filters = queries["search_infm_params_text"].fillna("").map(stem)
     return query + " " + query + " " + filters
 
 
@@ -164,7 +186,8 @@ def main() -> None:
     item_locations = items["item_location_id"].to_numpy()
     item_categories = items["item_category_id"].to_numpy()
 
-    print("Building word/full-text TF-IDF index...", flush=True)
+    print("Stemming text and building word/full-text TF-IDF index...", flush=True)
+    stem = CachedRussianStemmer()
     word_vectorizer = TfidfVectorizer(
         ngram_range=(1, 2),
         min_df=2,
@@ -173,7 +196,7 @@ def main() -> None:
         sublinear_tf=True,
         dtype=np.float32,
     )
-    word_matrix = word_vectorizer.fit_transform(build_word_item_text(items))
+    word_matrix = word_vectorizer.fit_transform(build_word_item_text(items, stem))
     word_transposed = word_matrix.T.tocsr()
     del word_matrix
 
@@ -192,7 +215,7 @@ def main() -> None:
     char_transposed = char_matrix.T.tocsr()
     del char_matrix
 
-    word_queries = word_vectorizer.transform(build_word_query_text(queries))
+    word_queries = word_vectorizer.transform(build_word_query_text(queries, stem))
     char_queries = char_vectorizer.transform(
         queries["search_query"].fillna("").map(normalize)
     )

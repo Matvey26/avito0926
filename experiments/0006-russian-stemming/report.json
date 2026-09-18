@@ -1,0 +1,70 @@
+{
+  "char_index": {
+    "vocabulary_size": 150000,
+    "shape": [
+      344825,
+      150000
+    ],
+    "nnz": 25000738
+  },
+  "word_indexes": [
+    {
+      "normalization": "baseline",
+      "vocabulary_size": 200000,
+      "word_index_shape": [
+        344825,
+        200000
+      ],
+      "word_index_nnz": 102187573,
+      "preprocessing_seconds": 14.79663383300067,
+      "indexing_seconds": 135.66586466700392
+    },
+    {
+      "normalization": "russian_snowball",
+      "vocabulary_size": 200000,
+      "word_index_shape": [
+        344825,
+        200000
+      ],
+      "word_index_nnz": 101923807,
+      "preprocessing_seconds": 57.97378620800009,
+      "indexing_seconds": 112.54311949999828,
+      "stem_cache_size": 813445
+    }
+  ],
+  "comparison": [
+    {
+      "normalization": "baseline",
+      "char_weight": 0.0,
+      "cold": 0.4557466666666667,
+      "warm": 0.4807582051282052,
+      "benchmark_mix_63_cold_37_warm": 0.46500093589743596,
+      "delta_vs_baseline": 0.0
+    },
+    {
+      "normalization": "baseline",
+      "char_weight": 0.25,
+      "cold": 0.5337599999999999,
+      "warm": 0.5615023076923077,
+      "benchmark_mix_63_cold_37_warm": 0.5440246538461537,
+      "delta_vs_baseline": 0.0
+    },
+    {
+      "normalization": "russian_snowball",
+      "char_weight": 0.0,
+      "cold": 0.5212266666666666,
+      "warm": 0.5499241025641026,
+      "benchmark_mix_63_cold_37_warm": 0.5318447179487179,
+      "delta_vs_baseline": 0.06684378205128194
+    },
+    {
+      "normalization": "russian_snowball",
+      "char_weight": 0.25,
+      "cold": 0.5692266666666667,
+      "warm": 0.6021548717948718,
+      "benchmark_mix_63_cold_37_warm": 0.5814101025641025,
+      "delta_vs_baseline": 0.0373854487179488
+    }
+  ],
+  "stemming_library": "snowballstemmer==3.0.1"
+}
