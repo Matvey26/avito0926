@@ -37,3 +37,9 @@ benchmark. Гипотеза: до выбора retrieval-метода можно
 ```bash
 .venv/bin/python experiments/0001-basic-eda/eda.py
 ```
+
+<!--
+Review: kend27
+Verdict: aprroved
+Date: 18.09.2026 ~ 9 AM
+-->

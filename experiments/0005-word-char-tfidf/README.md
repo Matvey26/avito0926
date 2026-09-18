@@ -38,3 +38,9 @@ Word-ветка полностью совпадает с `all_text` из экс�
 ```bash
 .venv/bin/python experiments/0005-word-char-tfidf/run.py
 ```
+
+<!--
+Review: kend27
+Verdict: denied
+Date: 18.09.2026 ~ 21 PM
+-->
