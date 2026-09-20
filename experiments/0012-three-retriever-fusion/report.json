@@ -1,0 +1,183 @@
+{
+  "retrievers": {
+    "word_bm25": "0008: russian_lemma, unigram, all_text",
+    "fasttext": "0009: GeoWAC mean pooling, title",
+    "char_bm25": "0011: char_wb (4,4), all_text"
+  },
+  "fusion": {
+    "strategies": [
+      "rrf",
+      "mean_minmax"
+    ],
+    "candidate_pool_per_retriever": 500,
+    "top_k": 50,
+    "rrf_k": 60,
+    "missing_minmax_score": 0.0,
+    "location_bonus": 0.5,
+    "location_bonus_stage": "after fusion score normalization"
+  },
+  "validation": {
+    "cold_queries": 2500,
+    "warm_queries": 2500,
+    "mixture": {
+      "cold": 0.63,
+      "warm": 0.37
+    }
+  },
+  "libraries": {
+    "numpy": "2.5.3",
+    "pandas": "3.0.5",
+    "scipy": "1.18.1",
+    "scikit-learn": "1.9.1",
+    "pymorphy3": "2.0.6",
+    "compress-fasttext": "0.1.5"
+  },
+  "best_fusion": {
+    "strategy": "mean_minmax",
+    "cold": 0.6507933333333333,
+    "warm": 0.6509497435897436,
+    "benchmark_mix_63_cold_37_warm": 0.6508512051282052
+  },
+  "all_fusions": [
+    {
+      "strategy": "mean_minmax",
+      "cold": 0.6507933333333333,
+      "warm": 0.6509497435897436,
+      "benchmark_mix_63_cold_37_warm": 0.6508512051282052
+    },
+    {
+      "strategy": "rrf",
+      "cold": 0.6322466666666667,
+      "warm": 0.6364748717948718,
+      "benchmark_mix_63_cold_37_warm": 0.6338111025641027
+    }
+  ],
+  "retriever_metrics": [
+    {
+      "retriever": "word_bm25",
+      "mode": "cold",
+      "queries": 2500,
+      "recall_at_50": 0.34107333333333334,
+      "recall_at_pool": 0.6536799999999999,
+      "benchmark_mix_recall_at_50": 0.3257420512820513,
+      "benchmark_mix_recall_at_pool": 0.6553184358974359
+    },
+    {
+      "retriever": "fasttext",
+      "mode": "cold",
+      "queries": 2500,
+      "recall_at_50": 0.2059133333333333,
+      "recall_at_pool": 0.42018,
+      "benchmark_mix_recall_at_50": 0.21077076923076923,
+      "benchmark_mix_recall_at_pool": 0.43006848717948715
+    },
+    {
+      "retriever": "char_bm25",
+      "mode": "cold",
+      "queries": 2500,
+      "recall_at_50": 0.32677333333333336,
+      "recall_at_pool": 0.6526133333333333,
+      "benchmark_mix_recall_at_50": 0.310856217948718,
+      "benchmark_mix_recall_at_pool": 0.6490338205128204
+    },
+    {
+      "retriever": "union_pool",
+      "mode": "cold",
+      "queries": 2500,
+      "recall_at_50": null,
+      "recall_at_pool": 0.7660933333333333,
+      "benchmark_mix_recall_at_50": null,
+      "benchmark_mix_recall_at_pool": 0.7633875897435898
+    },
+    {
+      "retriever": "word_bm25",
+      "mode": "warm",
+      "queries": 2500,
+      "recall_at_50": 0.2996374358974359,
+      "recall_at_pool": 0.6581082051282052,
+      "benchmark_mix_recall_at_50": 0.3257420512820513,
+      "benchmark_mix_recall_at_pool": 0.6553184358974359
+    },
+    {
+      "retriever": "fasttext",
+      "mode": "warm",
+      "queries": 2500,
+      "recall_at_50": 0.21904153846153848,
+      "recall_at_pool": 0.44690564102564095,
+      "benchmark_mix_recall_at_50": 0.21077076923076923,
+      "benchmark_mix_recall_at_pool": 0.43006848717948715
+    },
+    {
+      "retriever": "char_bm25",
+      "mode": "warm",
+      "queries": 2500,
+      "recall_at_50": 0.28375410256410255,
+      "recall_at_pool": 0.6429389743589743,
+      "benchmark_mix_recall_at_50": 0.310856217948718,
+      "benchmark_mix_recall_at_pool": 0.6490338205128204
+    },
+    {
+      "retriever": "union_pool",
+      "mode": "warm",
+      "queries": 2500,
+      "recall_at_50": null,
+      "recall_at_pool": 0.7587805128205128,
+      "benchmark_mix_recall_at_50": null,
+      "benchmark_mix_recall_at_pool": 0.7633875897435898
+    }
+  ],
+  "retriever_builds": {
+    "word_bm25": {
+      "normalization": "russian_lemma",
+      "document_variant": "all_text",
+      "normalization_cache_size": 813445,
+      "vocabulary_size": 200000,
+      "matrix_shape": [
+        344825,
+        200000
+      ],
+      "matrix_nnz": 47247857,
+      "indexing_seconds": 22.759716791000756,
+      "retrieval_seconds": 8.518164958999478,
+      "bm25": {
+        "average_document_length": 278.0047607421875,
+        "idf_min": 0.02307719737291336,
+        "idf_max": 11.834504127502441
+      }
+    },
+    "fasttext": {
+      "document_variant": "title",
+      "pooling": "mean raw word vectors and L2 normalization",
+      "model_sha256": "5fdb4135d96fab4ab99a64ee71ffd5263c850e4f3f64aec6632c168e70a6cee9",
+      "vector_size": 300,
+      "seconds": 17.182591624999986,
+      "token_cache": {
+        "hits": 1384502,
+        "misses": 48860,
+        "maxsize": 200000,
+        "currsize": 48860
+      }
+    },
+    "char_bm25": {
+      "normalization": "plain",
+      "document_variant": "all_text",
+      "char_ngram": [
+        4,
+        4
+      ],
+      "vocabulary_size": 150000,
+      "matrix_shape": [
+        344825,
+        150000
+      ],
+      "matrix_nnz": 269810655,
+      "indexing_seconds": 115.08287041700169,
+      "retrieval_seconds": 33.69221362499957,
+      "bm25": {
+        "average_document_length": 1670.6820068359375,
+        "idf_min": 4.350029485067353e-06,
+        "idf_max": 11.834504127502441
+      }
+    }
+  }
+}

@@ -1,0 +1,160 @@
+{
+  "grid": {
+    "models": [
+      "tfidf",
+      "bm25"
+    ],
+    "char_analyzer": "char_wb",
+    "char_ngram": [
+      4,
+      4
+    ],
+    "document_variants": [
+      "title",
+      "title_params",
+      "all_text"
+    ],
+    "configurations": 6
+  },
+  "shared_vocabulary": {
+    "min_df": 2,
+    "max_df": 1.0,
+    "max_features": 150000
+  },
+  "tfidf": {
+    "sublinear_tf": true,
+    "smooth_idf": true,
+    "norm": "l2"
+  },
+  "bm25": {
+    "k1": 1.5,
+    "b": 0.75
+  },
+  "validation": {
+    "cold_queries": 2500,
+    "warm_queries": 2500,
+    "top_k": 50,
+    "category_filter": true,
+    "word_features": false,
+    "location_bonus": false,
+    "fallback": false,
+    "mixture": {
+      "cold": 0.63,
+      "warm": 0.37
+    }
+  },
+  "libraries": {
+    "numpy": "2.5.3",
+    "pandas": "3.0.5",
+    "scipy": "1.18.1",
+    "scikit-learn": "1.9.1"
+  },
+  "best_config": {
+    "model": "bm25",
+    "document_variant": "all_text",
+    "cold": 0.32677333333333336,
+    "warm": 0.28375410256410255,
+    "benchmark_mix_63_cold_37_warm": 0.310856217948718
+  },
+  "best_by_model": {
+    "tfidf": {
+      "model": "tfidf",
+      "document_variant": "all_text",
+      "cold": 0.22836000000000004,
+      "warm": 0.21115743589743588,
+      "benchmark_mix_63_cold_37_warm": 0.2219950512820513
+    },
+    "bm25": {
+      "model": "bm25",
+      "document_variant": "all_text",
+      "cold": 0.32677333333333336,
+      "warm": 0.28375410256410255,
+      "benchmark_mix_63_cold_37_warm": 0.310856217948718
+    }
+  },
+  "pairwise": [
+    {
+      "document_variant": "title",
+      "cold_bm25": 0.23854666666666666,
+      "cold_tfidf": 0.21663333333333332,
+      "warm_bm25": 0.24934410256410255,
+      "warm_tfidf": 0.22486410256410255,
+      "benchmark_mix_63_cold_37_warm_bm25": 0.24254171794871793,
+      "benchmark_mix_63_cold_37_warm_tfidf": 0.21967871794871793,
+      "bm25_minus_tfidf": 0.022862999999999994
+    },
+    {
+      "document_variant": "title_params",
+      "cold_bm25": 0.2509133333333333,
+      "cold_tfidf": 0.21204666666666666,
+      "warm_bm25": 0.2481774358974359,
+      "warm_tfidf": 0.21524410256410256,
+      "benchmark_mix_63_cold_37_warm_bm25": 0.24990105128205128,
+      "benchmark_mix_63_cold_37_warm_tfidf": 0.21322971794871795,
+      "bm25_minus_tfidf": 0.036671333333333334
+    },
+    {
+      "document_variant": "all_text",
+      "cold_bm25": 0.32677333333333336,
+      "cold_tfidf": 0.22836000000000004,
+      "warm_bm25": 0.28375410256410255,
+      "warm_tfidf": 0.21115743589743588,
+      "benchmark_mix_63_cold_37_warm_bm25": 0.310856217948718,
+      "benchmark_mix_63_cold_37_warm_tfidf": 0.2219950512820513,
+      "bm25_minus_tfidf": 0.08886116666666669
+    }
+  ],
+  "indexes": [
+    {
+      "document_variant": "title",
+      "vocabulary_size": 66002,
+      "matrix_shape": [
+        344825,
+        66002
+      ],
+      "matrix_nnz": 8473890,
+      "count_indexing_seconds": 2.2526450830009708,
+      "tfidf_seconds": 4.060406791999412,
+      "bm25_seconds": 4.4436615419999725,
+      "bm25": {
+        "average_document_length": 25.398298263549805,
+        "idf_min": 1.872097373008728,
+        "idf_max": 11.834504127502441
+      }
+    },
+    {
+      "document_variant": "title_params",
+      "vocabulary_size": 150000,
+      "matrix_shape": [
+        344825,
+        150000
+      ],
+      "matrix_nnz": 110899542,
+      "count_indexing_seconds": 47.43521645799956,
+      "tfidf_seconds": 26.46313604199895,
+      "bm25_seconds": 26.242943082999773,
+      "bm25": {
+        "average_document_length": 792.6779174804688,
+        "idf_min": 7.250059752550442e-06,
+        "idf_max": 11.834504127502441
+      }
+    },
+    {
+      "document_variant": "all_text",
+      "vocabulary_size": 150000,
+      "matrix_shape": [
+        344825,
+        150000
+      ],
+      "matrix_nnz": 269810655,
+      "count_indexing_seconds": 118.2150416250006,
+      "tfidf_seconds": 35.074562499999956,
+      "bm25_seconds": 34.53961295799854,
+      "bm25": {
+        "average_document_length": 1670.6820068359375,
+        "idf_min": 4.350029485067353e-06,
+        "idf_max": 11.834504127502441
+      }
+    }
+  ]
+}

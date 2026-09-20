@@ -1,0 +1,3 @@
+document_variant,cold,warm,benchmark_mix_63_cold_37_warm,model,normalization,word_ngram
+title,0.2059133333333333,0.21904153846153848,0.21077076923076923,compress_fasttext_mean,,
+all_text,0.3410733333333333,0.2996374358974359,0.3257420512820513,bm25,russian_lemma,unigram

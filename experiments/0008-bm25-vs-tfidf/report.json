@@ -1,0 +1,924 @@
+{
+  "grid": {
+    "models": [
+      "tfidf",
+      "bm25"
+    ],
+    "normalizations": [
+      "plain",
+      "russian_snowball",
+      "russian_lemma"
+    ],
+    "word_ngrams": {
+      "unigram": [
+        1,
+        1
+      ],
+      "unigram_bigram": [
+        1,
+        2
+      ],
+      "unigram_to_trigram": [
+        1,
+        3
+      ]
+    },
+    "document_variants": [
+      "title",
+      "title_params",
+      "all_text"
+    ],
+    "configurations": 54
+  },
+  "shared_vocabulary": {
+    "min_df": 2,
+    "max_df": 0.99,
+    "max_features": 200000
+  },
+  "bm25": {
+    "k1": 1.5,
+    "b": 0.75
+  },
+  "validation": {
+    "cold_queries": 2500,
+    "warm_queries": 2500,
+    "top_k": 50,
+    "category_filter": true,
+    "location_bonus": false,
+    "character_features": false,
+    "fallback": false,
+    "mixture": {
+      "cold": 0.63,
+      "warm": 0.37
+    }
+  },
+  "libraries": {
+    "numpy": "2.5.3",
+    "pandas": "3.0.5",
+    "scipy": "1.18.1",
+    "scikit-learn": "1.9.1",
+    "snowballstemmer": "3.0.1",
+    "pymorphy3": "2.0.6"
+  },
+  "best_config": {
+    "model": "bm25",
+    "normalization": "russian_lemma",
+    "word_ngram": "unigram",
+    "document_variant": "all_text",
+    "cold": 0.34107333333333334,
+    "warm": 0.2996374358974359,
+    "benchmark_mix_63_cold_37_warm": 0.3257420512820513
+  },
+  "best_by_model": {
+    "tfidf": {
+      "model": "tfidf",
+      "normalization": "russian_lemma",
+      "word_ngram": "unigram",
+      "document_variant": "all_text",
+      "cold": 0.26059333333333334,
+      "warm": 0.24079076923076917,
+      "benchmark_mix_63_cold_37_warm": 0.2532663846153846
+    },
+    "bm25": {
+      "model": "bm25",
+      "normalization": "russian_lemma",
+      "word_ngram": "unigram",
+      "document_variant": "all_text",
+      "cold": 0.34107333333333334,
+      "warm": 0.2996374358974359,
+      "benchmark_mix_63_cold_37_warm": 0.3257420512820513
+    }
+  },
+  "top_configs": [
+    {
+      "model": "bm25",
+      "normalization": "russian_lemma",
+      "word_ngram": "unigram",
+      "document_variant": "all_text",
+      "cold": 0.34107333333333334,
+      "warm": 0.2996374358974359,
+      "benchmark_mix_63_cold_37_warm": 0.3257420512820513
+    },
+    {
+      "model": "bm25",
+      "normalization": "russian_snowball",
+      "word_ngram": "unigram",
+      "document_variant": "all_text",
+      "cold": 0.33863999999999994,
+      "warm": 0.2967374358974359,
+      "benchmark_mix_63_cold_37_warm": 0.32313605128205125
+    },
+    {
+      "model": "bm25",
+      "normalization": "russian_lemma",
+      "word_ngram": "unigram_bigram",
+      "document_variant": "all_text",
+      "cold": 0.2961066666666667,
+      "warm": 0.27380410256410254,
+      "benchmark_mix_63_cold_37_warm": 0.287854717948718
+    },
+    {
+      "model": "bm25",
+      "normalization": "russian_snowball",
+      "word_ngram": "unigram_bigram",
+      "document_variant": "all_text",
+      "cold": 0.2923733333333334,
+      "warm": 0.27150410256410257,
+      "benchmark_mix_63_cold_37_warm": 0.28465171794871796
+    },
+    {
+      "model": "bm25",
+      "normalization": "plain",
+      "word_ngram": "unigram",
+      "document_variant": "all_text",
+      "cold": 0.28952666666666665,
+      "warm": 0.27569076923076924,
+      "benchmark_mix_63_cold_37_warm": 0.2844073846153846
+    },
+    {
+      "model": "bm25",
+      "normalization": "russian_lemma",
+      "word_ngram": "unigram_to_trigram",
+      "document_variant": "all_text",
+      "cold": 0.26354,
+      "warm": 0.2436707692307692,
+      "benchmark_mix_63_cold_37_warm": 0.25618838461538457
+    },
+    {
+      "model": "bm25",
+      "normalization": "russian_snowball",
+      "word_ngram": "unigram_to_trigram",
+      "document_variant": "all_text",
+      "cold": 0.25897333333333333,
+      "warm": 0.24400410256410254,
+      "benchmark_mix_63_cold_37_warm": 0.25343471794871797
+    },
+    {
+      "model": "tfidf",
+      "normalization": "russian_lemma",
+      "word_ngram": "unigram",
+      "document_variant": "all_text",
+      "cold": 0.26059333333333334,
+      "warm": 0.24079076923076917,
+      "benchmark_mix_63_cold_37_warm": 0.2532663846153846
+    },
+    {
+      "model": "tfidf",
+      "normalization": "russian_snowball",
+      "word_ngram": "unigram",
+      "document_variant": "all_text",
+      "cold": 0.26009333333333334,
+      "warm": 0.23739076923076918,
+      "benchmark_mix_63_cold_37_warm": 0.2516933846153846
+    },
+    {
+      "model": "bm25",
+      "normalization": "russian_snowball",
+      "word_ngram": "unigram",
+      "document_variant": "title_params",
+      "cold": 0.25278,
+      "warm": 0.2497107692307692,
+      "benchmark_mix_63_cold_37_warm": 0.25164438461538463
+    },
+    {
+      "model": "bm25",
+      "normalization": "russian_lemma",
+      "word_ngram": "unigram",
+      "document_variant": "title_params",
+      "cold": 0.2490133333333333,
+      "warm": 0.24794410256410257,
+      "benchmark_mix_63_cold_37_warm": 0.24861771794871793
+    },
+    {
+      "model": "bm25",
+      "normalization": "russian_snowball",
+      "word_ngram": "unigram",
+      "document_variant": "title",
+      "cold": 0.24379333333333333,
+      "warm": 0.25412410256410256,
+      "benchmark_mix_63_cold_37_warm": 0.24761571794871795
+    },
+    {
+      "model": "bm25",
+      "normalization": "russian_lemma",
+      "word_ngram": "unigram",
+      "document_variant": "title",
+      "cold": 0.24134666666666668,
+      "warm": 0.25631076923076923,
+      "benchmark_mix_63_cold_37_warm": 0.24688338461538462
+    },
+    {
+      "model": "bm25",
+      "normalization": "plain",
+      "word_ngram": "unigram_bigram",
+      "document_variant": "all_text",
+      "cold": 0.24830666666666665,
+      "warm": 0.2393374358974359,
+      "benchmark_mix_63_cold_37_warm": 0.24498805128205126
+    },
+    {
+      "model": "tfidf",
+      "normalization": "russian_lemma",
+      "word_ngram": "unigram_bigram",
+      "document_variant": "all_text",
+      "cold": 0.24732666666666664,
+      "warm": 0.24069076923076924,
+      "benchmark_mix_63_cold_37_warm": 0.2448713846153846
+    },
+    {
+      "model": "tfidf",
+      "normalization": "russian_snowball",
+      "word_ngram": "unigram_bigram",
+      "document_variant": "all_text",
+      "cold": 0.24742666666666666,
+      "warm": 0.2382574358974359,
+      "benchmark_mix_63_cold_37_warm": 0.24403405128205125
+    },
+    {
+      "model": "bm25",
+      "normalization": "russian_snowball",
+      "word_ngram": "unigram_bigram",
+      "document_variant": "title",
+      "cold": 0.2347333333333333,
+      "warm": 0.24846410256410253,
+      "benchmark_mix_63_cold_37_warm": 0.23981371794871792
+    },
+    {
+      "model": "bm25",
+      "normalization": "russian_lemma",
+      "word_ngram": "unigram_bigram",
+      "document_variant": "title",
+      "cold": 0.2339,
+      "warm": 0.24756410256410255,
+      "benchmark_mix_63_cold_37_warm": 0.23895571794871795
+    },
+    {
+      "model": "bm25",
+      "normalization": "russian_snowball",
+      "word_ngram": "unigram_to_trigram",
+      "document_variant": "title",
+      "cold": 0.2337333333333333,
+      "warm": 0.24666410256410254,
+      "benchmark_mix_63_cold_37_warm": 0.2385177179487179
+    },
+    {
+      "model": "bm25",
+      "normalization": "russian_snowball",
+      "word_ngram": "unigram_bigram",
+      "document_variant": "title_params",
+      "cold": 0.23321333333333333,
+      "warm": 0.24557743589743586,
+      "benchmark_mix_63_cold_37_warm": 0.23778805128205127
+    }
+  ],
+  "indexes": [
+    {
+      "normalization": "plain",
+      "word_ngram": "unigram",
+      "document_variant": "title",
+      "ngram_range": [
+        1,
+        1
+      ],
+      "vocabulary_size": 25164,
+      "matrix_shape": [
+        344825,
+        25164
+      ],
+      "matrix_nnz": 1375754,
+      "count_indexing_seconds": 0.5586295829853043,
+      "normalization_cache_size": 813445,
+      "tfidf_seconds": 1.206103834003443,
+      "bm25_seconds": 1.2155716249835677,
+      "bm25": {
+        "average_document_length": 4.048178195953369,
+        "idf_min": 2.081735134124756,
+        "idf_max": 11.834504127502441
+      }
+    },
+    {
+      "normalization": "plain",
+      "word_ngram": "unigram_bigram",
+      "document_variant": "title",
+      "ngram_range": [
+        1,
+        2
+      ],
+      "vocabulary_size": 97334,
+      "matrix_shape": [
+        344825,
+        97334
+      ],
+      "matrix_nnz": 2276719,
+      "count_indexing_seconds": 1.376686333998805,
+      "normalization_cache_size": 813445,
+      "tfidf_seconds": 1.2052300000214018,
+      "bm25_seconds": 1.2714794159983285,
+      "bm25": {
+        "average_document_length": 6.665299892425537,
+        "idf_min": 2.081735134124756,
+        "idf_max": 11.834504127502441
+      }
+    },
+    {
+      "normalization": "plain",
+      "word_ngram": "unigram_to_trigram",
+      "document_variant": "title",
+      "ngram_range": [
+        1,
+        3
+      ],
+      "vocabulary_size": 165573,
+      "matrix_shape": [
+        344825,
+        165573
+      ],
+      "matrix_nnz": 2757827,
+      "count_indexing_seconds": 2.323429916985333,
+      "normalization_cache_size": 813445,
+      "tfidf_seconds": 1.2358895000070333,
+      "bm25_seconds": 1.3004164999874774,
+      "bm25": {
+        "average_document_length": 8.060700416564941,
+        "idf_min": 2.081735134124756,
+        "idf_max": 11.834504127502441
+      }
+    },
+    {
+      "normalization": "plain",
+      "word_ngram": "unigram",
+      "document_variant": "title_params",
+      "ngram_range": [
+        1,
+        1
+      ],
+      "vocabulary_size": 77827,
+      "matrix_shape": [
+        344825,
+        77827
+      ],
+      "matrix_nnz": 22020567,
+      "count_indexing_seconds": 11.109055125009036,
+      "normalization_cache_size": 813445,
+      "tfidf_seconds": 5.210394833004102,
+      "bm25_seconds": 5.202021416975185,
+      "bm25": {
+        "average_document_length": 146.0013427734375,
+        "idf_min": 0.048352427780628204,
+        "idf_max": 11.834504127502441
+      }
+    },
+    {
+      "normalization": "plain",
+      "word_ngram": "unigram_bigram",
+      "document_variant": "title_params",
+      "ngram_range": [
+        1,
+        2
+      ],
+      "vocabulary_size": 200000,
+      "matrix_shape": [
+        344825,
+        200000
+      ],
+      "matrix_nnz": 54072927,
+      "count_indexing_seconds": 26.191271916002734,
+      "normalization_cache_size": 813445,
+      "tfidf_seconds": 9.284956499992404,
+      "bm25_seconds": 9.069822291989112,
+      "bm25": {
+        "average_document_length": 299.9397888183594,
+        "idf_min": 0.048352427780628204,
+        "idf_max": 11.834504127502441
+      }
+    },
+    {
+      "normalization": "plain",
+      "word_ngram": "unigram_to_trigram",
+      "document_variant": "title_params",
+      "ngram_range": [
+        1,
+        3
+      ],
+      "vocabulary_size": 200000,
+      "matrix_shape": [
+        344825,
+        200000
+      ],
+      "matrix_nnz": 90662038,
+      "count_indexing_seconds": 46.53218974999618,
+      "normalization_cache_size": 813445,
+      "tfidf_seconds": 10.114183084020624,
+      "bm25_seconds": 9.841697541996837,
+      "bm25": {
+        "average_document_length": 448.3570861816406,
+        "idf_min": 0.048352427780628204,
+        "idf_max": 11.834504127502441
+      }
+    },
+    {
+      "normalization": "plain",
+      "word_ngram": "unigram",
+      "document_variant": "all_text",
+      "ngram_range": [
+        1,
+        1
+      ],
+      "vocabulary_size": 200000,
+      "matrix_shape": [
+        344825,
+        200000
+      ],
+      "matrix_nnz": 53147180,
+      "count_indexing_seconds": 28.143159290979384,
+      "normalization_cache_size": 813445,
+      "tfidf_seconds": 7.8461457079974934,
+      "bm25_seconds": 7.574010834010551,
+      "bm25": {
+        "average_document_length": 287.31005859375,
+        "idf_min": 0.02307719737291336,
+        "idf_max": 11.834504127502441
+      }
+    },
+    {
+      "normalization": "plain",
+      "word_ngram": "unigram_bigram",
+      "document_variant": "all_text",
+      "ngram_range": [
+        1,
+        2
+      ],
+      "vocabulary_size": 200000,
+      "matrix_shape": [
+        344825,
+        200000
+      ],
+      "matrix_nnz": 102073955,
+      "count_indexing_seconds": 105.4695596669917,
+      "normalization_cache_size": 813445,
+      "tfidf_seconds": 11.861694916005945,
+      "bm25_seconds": 11.594016834016657,
+      "bm25": {
+        "average_document_length": 501.4449462890625,
+        "idf_min": 0.02307719737291336,
+        "idf_max": 11.834504127502441
+      }
+    },
+    {
+      "normalization": "plain",
+      "word_ngram": "unigram_to_trigram",
+      "document_variant": "all_text",
+      "ngram_range": [
+        1,
+        3
+      ],
+      "vocabulary_size": 200000,
+      "matrix_shape": [
+        344825,
+        200000
+      ],
+      "matrix_nnz": 140515131,
+      "count_indexing_seconds": 233.21096595798736,
+      "normalization_cache_size": 813445,
+      "tfidf_seconds": 12.876271916989936,
+      "bm25_seconds": 12.45157004200155,
+      "bm25": {
+        "average_document_length": 656.6533813476562,
+        "idf_min": 0.02307719737291336,
+        "idf_max": 11.834504127502441
+      }
+    },
+    {
+      "normalization": "russian_snowball",
+      "word_ngram": "unigram",
+      "document_variant": "title",
+      "ngram_range": [
+        1,
+        1
+      ],
+      "vocabulary_size": 15776,
+      "matrix_shape": [
+        344825,
+        15776
+      ],
+      "matrix_nnz": 1375604,
+      "count_indexing_seconds": 0.5565374160069041,
+      "normalization_cache_size": 813445,
+      "tfidf_seconds": 1.4465775419957936,
+      "bm25_seconds": 1.44676362501923,
+      "bm25": {
+        "average_document_length": 4.0745015144348145,
+        "idf_min": 2.065840721130371,
+        "idf_max": 11.834504127502441
+      }
+    },
+    {
+      "normalization": "russian_snowball",
+      "word_ngram": "unigram_bigram",
+      "document_variant": "title",
+      "ngram_range": [
+        1,
+        2
+      ],
+      "vocabulary_size": 82852,
+      "matrix_shape": [
+        344825,
+        82852
+      ],
+      "matrix_nnz": 2308842,
+      "count_indexing_seconds": 1.331505374982953,
+      "normalization_cache_size": 813445,
+      "tfidf_seconds": 1.4052147920010611,
+      "bm25_seconds": 1.4240842500003055,
+      "bm25": {
+        "average_document_length": 6.786564350128174,
+        "idf_min": 2.065840721130371,
+        "idf_max": 11.834504127502441
+      }
+    },
+    {
+      "normalization": "russian_snowball",
+      "word_ngram": "unigram_to_trigram",
+      "document_variant": "title",
+      "ngram_range": [
+        1,
+        3
+      ],
+      "vocabulary_size": 151072,
+      "matrix_shape": [
+        344825,
+        151072
+      ],
+      "matrix_nnz": 2815315,
+      "count_indexing_seconds": 2.1571967079944443,
+      "normalization_cache_size": 813445,
+      "tfidf_seconds": 1.409785791998729,
+      "bm25_seconds": 1.4408029160113074,
+      "bm25": {
+        "average_document_length": 8.255718231201172,
+        "idf_min": 2.065840721130371,
+        "idf_max": 11.834504127502441
+      }
+    },
+    {
+      "normalization": "russian_snowball",
+      "word_ngram": "unigram",
+      "document_variant": "title_params",
+      "ngram_range": [
+        1,
+        1
+      ],
+      "vocabulary_size": 53746,
+      "matrix_shape": [
+        344825,
+        53746
+      ],
+      "matrix_nnz": 20416335,
+      "count_indexing_seconds": 10.590408000018215,
+      "normalization_cache_size": 813445,
+      "tfidf_seconds": 5.714941833022749,
+      "bm25_seconds": 5.656275125016691,
+      "bm25": {
+        "average_document_length": 136.50205993652344,
+        "idf_min": 0.048352427780628204,
+        "idf_max": 11.834504127502441
+      }
+    },
+    {
+      "normalization": "russian_snowball",
+      "word_ngram": "unigram_bigram",
+      "document_variant": "title_params",
+      "ngram_range": [
+        1,
+        2
+      ],
+      "vocabulary_size": 200000,
+      "matrix_shape": [
+        344825,
+        200000
+      ],
+      "matrix_nnz": 52375830,
+      "count_indexing_seconds": 24.260896292020334,
+      "normalization_cache_size": 813445,
+      "tfidf_seconds": 9.777838834008435,
+      "bm25_seconds": 9.631903875007993,
+      "bm25": {
+        "average_document_length": 291.15545654296875,
+        "idf_min": 0.048352427780628204,
+        "idf_max": 11.834504127502441
+      }
+    },
+    {
+      "normalization": "russian_snowball",
+      "word_ngram": "unigram_to_trigram",
+      "document_variant": "title_params",
+      "ngram_range": [
+        1,
+        3
+      ],
+      "vocabulary_size": 200000,
+      "matrix_shape": [
+        344825,
+        200000
+      ],
+      "matrix_nnz": 89112001,
+      "count_indexing_seconds": 43.30049029100337,
+      "normalization_cache_size": 813445,
+      "tfidf_seconds": 10.614427584019722,
+      "bm25_seconds": 10.347170875000302,
+      "bm25": {
+        "average_document_length": 440.4462585449219,
+        "idf_min": 0.048352427780628204,
+        "idf_max": 11.834504127502441
+      }
+    },
+    {
+      "normalization": "russian_snowball",
+      "word_ngram": "unigram",
+      "document_variant": "all_text",
+      "ngram_range": [
+        1,
+        1
+      ],
+      "vocabulary_size": 200000,
+      "matrix_shape": [
+        344825,
+        200000
+      ],
+      "matrix_nnz": 47829813,
+      "count_indexing_seconds": 24.12422491700272,
+      "normalization_cache_size": 813445,
+      "tfidf_seconds": 9.103672874975018,
+      "bm25_seconds": 8.900525458011543,
+      "bm25": {
+        "average_document_length": 278.88372802734375,
+        "idf_min": 0.02302081324160099,
+        "idf_max": 11.834504127502441
+      }
+    },
+    {
+      "normalization": "russian_snowball",
+      "word_ngram": "unigram_bigram",
+      "document_variant": "all_text",
+      "ngram_range": [
+        1,
+        2
+      ],
+      "vocabulary_size": 200000,
+      "matrix_shape": [
+        344825,
+        200000
+      ],
+      "matrix_nnz": 101776010,
+      "count_indexing_seconds": 88.50516000000061,
+      "normalization_cache_size": 813445,
+      "tfidf_seconds": 12.613945999997668,
+      "bm25_seconds": 12.345520749979187,
+      "bm25": {
+        "average_document_length": 512.1590576171875,
+        "idf_min": 0.02302081324160099,
+        "idf_max": 11.834504127502441
+      }
+    },
+    {
+      "normalization": "russian_snowball",
+      "word_ngram": "unigram_to_trigram",
+      "document_variant": "all_text",
+      "ngram_range": [
+        1,
+        3
+      ],
+      "vocabulary_size": 200000,
+      "matrix_shape": [
+        344825,
+        200000
+      ],
+      "matrix_nnz": 141548337,
+      "count_indexing_seconds": 196.81114612499368,
+      "normalization_cache_size": 813445,
+      "tfidf_seconds": 13.764598500012653,
+      "bm25_seconds": 13.502642417006427,
+      "bm25": {
+        "average_document_length": 672.4984741210938,
+        "idf_min": 0.02302081324160099,
+        "idf_max": 11.834504127502441
+      }
+    },
+    {
+      "normalization": "russian_lemma",
+      "word_ngram": "unigram",
+      "document_variant": "title",
+      "ngram_range": [
+        1,
+        1
+      ],
+      "vocabulary_size": 16155,
+      "matrix_shape": [
+        344825,
+        16155
+      ],
+      "matrix_nnz": 1376908,
+      "count_indexing_seconds": 0.5376908339967486,
+      "normalization_cache_size": 813445,
+      "tfidf_seconds": 1.3577097079833038,
+      "bm25_seconds": 1.3563222080119886,
+      "bm25": {
+        "average_document_length": 4.07123327255249,
+        "idf_min": 2.0658633708953857,
+        "idf_max": 11.834504127502441
+      }
+    },
+    {
+      "normalization": "russian_lemma",
+      "word_ngram": "unigram_bigram",
+      "document_variant": "title",
+      "ngram_range": [
+        1,
+        2
+      ],
+      "vocabulary_size": 82886,
+      "matrix_shape": [
+        344825,
+        82886
+      ],
+      "matrix_nnz": 2309803,
+      "count_indexing_seconds": 1.1815399159968365,
+      "normalization_cache_size": 813445,
+      "tfidf_seconds": 1.3487926659872755,
+      "bm25_seconds": 1.3739317079889588,
+      "bm25": {
+        "average_document_length": 6.782228469848633,
+        "idf_min": 2.0658633708953857,
+        "idf_max": 11.834504127502441
+      }
+    },
+    {
+      "normalization": "russian_lemma",
+      "word_ngram": "unigram_to_trigram",
+      "document_variant": "title",
+      "ngram_range": [
+        1,
+        3
+      ],
+      "vocabulary_size": 151004,
+      "matrix_shape": [
+        344825,
+        151004
+      ],
+      "matrix_nnz": 2816560,
+      "count_indexing_seconds": 1.9793634999950882,
+      "normalization_cache_size": 813445,
+      "tfidf_seconds": 1.354457832989283,
+      "bm25_seconds": 1.3910205840074923,
+      "bm25": {
+        "average_document_length": 8.252191543579102,
+        "idf_min": 2.0658633708953857,
+        "idf_max": 11.834504127502441
+      }
+    },
+    {
+      "normalization": "russian_lemma",
+      "word_ngram": "unigram",
+      "document_variant": "title_params",
+      "ngram_range": [
+        1,
+        1
+      ],
+      "vocabulary_size": 55494,
+      "matrix_shape": [
+        344825,
+        55494
+      ],
+      "matrix_nnz": 20366926,
+      "count_indexing_seconds": 10.380916249996517,
+      "normalization_cache_size": 813445,
+      "tfidf_seconds": 5.638781959016342,
+      "bm25_seconds": 5.552636041014921,
+      "bm25": {
+        "average_document_length": 136.396484375,
+        "idf_min": 0.048352427780628204,
+        "idf_max": 11.834504127502441
+      }
+    },
+    {
+      "normalization": "russian_lemma",
+      "word_ngram": "unigram_bigram",
+      "document_variant": "title_params",
+      "ngram_range": [
+        1,
+        2
+      ],
+      "vocabulary_size": 200000,
+      "matrix_shape": [
+        344825,
+        200000
+      ],
+      "matrix_nnz": 52282883,
+      "count_indexing_seconds": 23.070516999985557,
+      "normalization_cache_size": 813445,
+      "tfidf_seconds": 9.536189750011545,
+      "bm25_seconds": 9.481603583000833,
+      "bm25": {
+        "average_document_length": 290.92364501953125,
+        "idf_min": 0.048352427780628204,
+        "idf_max": 11.834504127502441
+      }
+    },
+    {
+      "normalization": "russian_lemma",
+      "word_ngram": "unigram_to_trigram",
+      "document_variant": "title_params",
+      "ngram_range": [
+        1,
+        3
+      ],
+      "vocabulary_size": 200000,
+      "matrix_shape": [
+        344825,
+        200000
+      ],
+      "matrix_nnz": 88978404,
+      "count_indexing_seconds": 42.67300216597505,
+      "normalization_cache_size": 813445,
+      "tfidf_seconds": 10.38475604201085,
+      "bm25_seconds": 10.098418082983699,
+      "bm25": {
+        "average_document_length": 440.0965881347656,
+        "idf_min": 0.048352427780628204,
+        "idf_max": 11.834504127502441
+      }
+    },
+    {
+      "normalization": "russian_lemma",
+      "word_ngram": "unigram",
+      "document_variant": "all_text",
+      "ngram_range": [
+        1,
+        1
+      ],
+      "vocabulary_size": 200000,
+      "matrix_shape": [
+        344825,
+        200000
+      ],
+      "matrix_nnz": 47247857,
+      "count_indexing_seconds": 22.959441416023765,
+      "normalization_cache_size": 813445,
+      "tfidf_seconds": 8.6807513749809,
+      "bm25_seconds": 8.566587125009391,
+      "bm25": {
+        "average_document_length": 278.0047607421875,
+        "idf_min": 0.02307719737291336,
+        "idf_max": 11.834504127502441
+      }
+    },
+    {
+      "normalization": "russian_lemma",
+      "word_ngram": "unigram_bigram",
+      "document_variant": "all_text",
+      "ngram_range": [
+        1,
+        2
+      ],
+      "vocabulary_size": 200000,
+      "matrix_shape": [
+        344825,
+        200000
+      ],
+      "matrix_nnz": 101098446,
+      "count_indexing_seconds": 81.50890395898023,
+      "normalization_cache_size": 813445,
+      "tfidf_seconds": 12.982082041009562,
+      "bm25_seconds": 12.637869999976829,
+      "bm25": {
+        "average_document_length": 511.15216064453125,
+        "idf_min": 0.02307719737291336,
+        "idf_max": 11.834504127502441
+      }
+    },
+    {
+      "normalization": "russian_lemma",
+      "word_ngram": "unigram_to_trigram",
+      "document_variant": "all_text",
+      "ngram_range": [
+        1,
+        3
+      ],
+      "vocabulary_size": 200000,
+      "matrix_shape": [
+        344825,
+        200000
+      ],
+      "matrix_nnz": 140870551,
+      "count_indexing_seconds": 201.62512583300122,
+      "normalization_cache_size": 813445,
+      "tfidf_seconds": 13.893741916981526,
+      "bm25_seconds": 13.29851387499366,
+      "bm25": {
+        "average_document_length": 671.5269165039062,
+        "idf_min": 0.02307719737291336,
+        "idf_max": 11.834504127502441
+      }
+    }
+  ]
+}

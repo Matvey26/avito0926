@@ -1,0 +1,121 @@
+{
+  "model": {
+    "library": "compress-fasttext",
+    "filename": "geowac_tokens_sg_300_5_2020-100K-20K-100.bin",
+    "url": "https://github.com/avidale/compress-fasttext/releases/download/gensim-4-draft/geowac_tokens_sg_300_5_2020-100K-20K-100.bin",
+    "sha256": "5fdb4135d96fab4ab99a64ee71ffd5263c850e4f3f64aec6632c168e70a6cee9",
+    "vector_size": 300,
+    "pooling": "mean raw word vectors, then document L2 normalization",
+    "similarity": "exact cosine within target category"
+  },
+  "grid": {
+    "document_variants": [
+      "title",
+      "title_params",
+      "all_text"
+    ],
+    "configurations": 3
+  },
+  "validation": {
+    "cold_queries": 2500,
+    "warm_queries": 2500,
+    "top_k": 50,
+    "category_filter": true,
+    "location_bonus": false,
+    "fallback": false,
+    "mixture": {
+      "cold": 0.63,
+      "warm": 0.37
+    }
+  },
+  "libraries": {
+    "numpy": "2.5.3",
+    "pandas": "3.0.5",
+    "compress-fasttext": "0.1.5",
+    "gensim": "4.4.0"
+  },
+  "best_dense": {
+    "document_variant": "title",
+    "cold": 0.2059133333333333,
+    "warm": 0.21904153846153848,
+    "benchmark_mix_63_cold_37_warm": 0.21077076923076923,
+    "model": "compress_fasttext_mean"
+  },
+  "best_bm25_0008": {
+    "model": "bm25",
+    "normalization": "russian_lemma",
+    "word_ngram": "unigram",
+    "document_variant": "all_text",
+    "cold": 0.3410733333333333,
+    "warm": 0.2996374358974359,
+    "benchmark_mix_63_cold_37_warm": 0.3257420512820513
+  },
+  "dense_minus_bm25": -0.11497128205128207,
+  "all_dense_configs": [
+    {
+      "document_variant": "title",
+      "cold": 0.2059133333333333,
+      "warm": 0.21904153846153848,
+      "benchmark_mix_63_cold_37_warm": 0.21077076923076923
+    },
+    {
+      "document_variant": "all_text",
+      "cold": 0.053693333333333336,
+      "warm": 0.05122666666666666,
+      "benchmark_mix_63_cold_37_warm": 0.05278066666666667
+    },
+    {
+      "document_variant": "title_params",
+      "cold": 0.030279999999999994,
+      "warm": 0.032780000000000004,
+      "benchmark_mix_63_cold_37_warm": 0.031204999999999997
+    }
+  ],
+  "diagnostics": [
+    {
+      "document_variant": "title",
+      "mean_item_tokens": 4.115884869136519,
+      "zero_item_embeddings": 21,
+      "mean_query_tokens": {
+        "cold": 2.964,
+        "warm": 2.6768
+      },
+      "zero_query_embeddings": {
+        "cold": 0,
+        "warm": 0
+      }
+    },
+    {
+      "document_variant": "title_params",
+      "mean_item_tokens": 161.0378771840789,
+      "zero_item_embeddings": 0,
+      "mean_query_tokens": {
+        "cold": 6.336,
+        "warm": 6.4168
+      },
+      "zero_query_embeddings": {
+        "cold": 0,
+        "warm": 0
+      }
+    },
+    {
+      "document_variant": "all_text",
+      "mean_item_tokens": 305.4343594576959,
+      "zero_item_embeddings": 0,
+      "mean_query_tokens": {
+        "cold": 6.336,
+        "warm": 6.4168
+      },
+      "zero_query_embeddings": {
+        "cold": 0,
+        "warm": 0
+      }
+    }
+  ],
+  "token_cache": {
+    "hits": 103839138,
+    "misses": 1514147,
+    "maxsize": 200000,
+    "currsize": 200000
+  }
+}

@@ -1,0 +1,115 @@
+{
+  "model": {
+    "library": "sentence-transformers",
+    "model_id": "sergeyzh/rubert-mini-retriever",
+    "revision": "4ae6298c749e413b958d64a4b349a907c15a3b54",
+    "model_sha256": "45ca37ef2fa6e081e029ec6dc2b0545f2cfe00881c57f31d65319460a236e762",
+    "vector_size": 312,
+    "max_sequence_length": 512,
+    "pooling": "native SentenceTransformer pooling and L2 normalization",
+    "similarity": "exact cosine within target category",
+    "query_prefix": null
+  },
+  "grid": {
+    "document_variants": [
+      "title",
+      "title_params"
+    ],
+    "configurations": 2
+  },
+  "validation": {
+    "cold_queries": 2500,
+    "warm_queries": 2500,
+    "top_k": 50,
+    "category_filter": true,
+    "location_bonus": false,
+    "fallback": false,
+    "mixture": {
+      "cold": 0.63,
+      "warm": 0.37
+    }
+  },
+  "runtime": {
+    "device": "cpu"
+  },
+  "libraries": {
+    "numpy": "2.5.3",
+    "pandas": "3.0.5",
+    "torch": "2.14.0",
+    "sentence-transformers": "5.1.1",
+    "transformers": "4.57.6"
+  },
+  "best_dense": {
+    "document_variant": "title",
+    "cold": 0.21856666666666666,
+    "warm": 0.22316410256410255,
+    "benchmark_mix_63_cold_37_warm": 0.2202677179487179,
+    "model": "sergeyzh/rubert-mini-retriever"
+  },
+  "best_bm25_0008": {
+    "model": "bm25",
+    "normalization": "russian_lemma",
+    "word_ngram": "unigram",
+    "document_variant": "all_text",
+    "cold": 0.3410733333333333,
+    "warm": 0.2996374358974359,
+    "benchmark_mix_63_cold_37_warm": 0.3257420512820513
+  },
+  "dense_minus_bm25": -0.10547433333333339,
+  "all_dense_configs": [
+    {
+      "document_variant": "title",
+      "cold": 0.21856666666666666,
+      "warm": 0.22316410256410255,
+      "benchmark_mix_63_cold_37_warm": 0.2202677179487179
+    },
+    {
+      "document_variant": "title_params",
+      "cold": 0.16583333333333333,
+      "warm": 0.15939743589743588,
+      "benchmark_mix_63_cold_37_warm": 0.16345205128205126
+    }
+  ],
+  "diagnostics": [
+    {
+      "document_variant": "title",
+      "items": {
+        "mean_whitespace_tokens": 4.328122960922207,
+        "empty_texts": 0,
+        "seconds": 78.58988941700045
+      },
+      "queries": {
+        "cold": {
+          "mean_whitespace_tokens": 3.1032,
+          "empty_texts": 0,
+          "seconds": 0.4214135840011295
+        },
+        "warm": {
+          "mean_whitespace_tokens": 2.776,
+          "empty_texts": 0,
+          "seconds": 0.4044170420002047
+        }
+      }
+    },
+    {
+      "document_variant": "title_params",
+      "items": {
+        "mean_whitespace_tokens": 165.76637714782862,
+        "empty_texts": 0,
+        "seconds": 1287.5158679999986
+      },
+      "queries": {
+        "cold": {
+          "mean_whitespace_tokens": 6.6528,
+          "empty_texts": 0,
+          "seconds": 0.592001375000109
+        },
+        "warm": {
+          "mean_whitespace_tokens": 6.7224,
+          "empty_texts": 0,
+          "seconds": 0.5945985829985148
+        }
+      }
+    }
+  ]
+}

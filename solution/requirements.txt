@@ -1,6 +1,9 @@
+compress-fasttext==0.1.5
+gensim==4.4.0
 numpy==2.5.3
 pandas==3.0.5
 pyarrow==25.0.1
+pymorphy3==2.0.6
+pymorphy3-dicts-ru==2.4.417150.4580142
 scikit-learn==1.9.1
 scipy==1.18.1
-snowballstemmer==3.0.1
