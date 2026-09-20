@@ -1,0 +1,14 @@
+{
+  "word_ngram": [
+    1,
+    2
+  ],
+  "char_ngram": [
+    3,
+    4
+  ],
+  "location_bonus": 0.5,
+  "base_mix_recall_at_50": 0.6508512051282052,
+  "variant_mix_recall_at_50": 0.6495582564102564,
+  "delta_vs_0012": -0.0012929487179487165
+}
